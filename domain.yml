@@ -1,0 +1,49 @@
+intents:
+- greet
+- product_review
+- product_details
+- goodbye
+- feedback
+
+entities:
+- category
+- prod_review
+- prod_feature
+- prod_name
+- feedback_text
+
+actions:
+- action_prod_details
+- action_get_sentiment
+
+slots:
+  prod_name:
+    type: text
+  prod_feature:
+    type: list
+  category:
+    type: text
+  feedback_text:
+    type: text
+    influence_conversation: true
+
+
+responses:
+  utter_greet:
+  - text: Welcome! I am your super BOT. I can help you with your queries.
+  
+  utter_product:
+  - text: Can you name your product for which you require assistance?
+  
+  utter_confirm:
+  - text: Your product is {prod_name} belonging to {category} and has features {prod_feature}. How may I help you?
+  
+  utter_acknowledge:
+  - text: Thanks! Please type in your feedback/review.
+
+  utter_goodbye:
+    - text: See you, bye!
+
+  
+  
+  
